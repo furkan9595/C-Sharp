@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	internal class Program
+	{
+
+
+		static void Main(string[] args)
+		{
+
+			//String[,] regions = new String[7, 3];
+			//regions[0,0] = "istanbul";
+			//regions[0, 1] = "aaa";
+			//regions[0, 2] = "ankara";
+
+			String[,] regionss = new String[7,3] 
+			{
+				{"furka","aaa","aaas"},
+				{"furka","aaa","aaas"},
+				{"furka","aaa","aaas"},
+				{"furka","aaa","aaas"},
+				{"furka","aaa","aaas"},
+				{"furka","aaa","aaas"},
+				{"furka","aaa","aaas"},
+
+			};
+
+			for (int i = 0; i < regionss.GetUpperBound(0); i++)
+			{
+				for (int j = 0; j < regionss.GetUpperBound(1); j++)
+				{
+					Console.WriteLine(i+"ve "+j+" indisleri yazıldı : "+regionss[i,j] );
+				}
+			}
+ 
+			Console.ReadLine();
+ 
+		}
+ 
+	}
+
+	
+}
