@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	internal class Program
+	{
+
+
+		static void Main(string[] args)
+		{
+
+
+			//use foreach with string
+
+			string number = "furkan";
+
+			foreach(var arg in number)
+			{
+				Console.WriteLine(arg);
+			}
+
+
+			// sum of strings 
+			string data1 = "furkan ";
+			string data2 = "kalkan";
+
+			Console.WriteLine(data1+data2);
+
+			//use format
+
+			Console.WriteLine(string.Format("{0}{1}",data1,data2));
+			 
+			 
+
+
+
+			Console.ReadLine();
+
+		}
+
+	}
+
+
+}
