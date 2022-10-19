@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	internal class Program
+	{
+
+
+		static void Main(string[] args)
+		{
+
+
+
+
+			string sentence = "my name is furkan kalkan";
+
+
+
+			Console.WriteLine(sentence.Length);
+			Console.WriteLine(sentence.Clone());
+			Console.WriteLine(sentence.IndexOf("fusrkan"));
+			Console.WriteLine(sentence.EndsWith("fusrkan"));
+			Console.WriteLine(sentence.StartsWith("fusrkan"));
+			Console.WriteLine(sentence.LastIndexOf("fusrkan"));
+			Console.WriteLine(sentence.Insert(0,"furkanlar"));//0. indexten itibaren furkanları ekle
+			Console.WriteLine(sentence.Substring(3));//metni parçalamak için kullanılır.3. karakterden itibaren la demek
+			Console.WriteLine(sentence.Substring(3,4));//3. indexten itbaren 4 karakter al
+			Console.WriteLine(sentence.IndexOf("fusrkan"));
+			Console.WriteLine(sentence.ToLower());//bütün karakterleri küçük yapar
+			Console.WriteLine(sentence.ToUpper());//bütün karakterleri büyük yapar
+			Console.WriteLine(sentence.Replace(" ","-"));//boşluk yerine - koymak istedim. yer değiştirmek için kulanılır
+			Console.WriteLine(sentence.Remove(2));//belli bir kısmı atmak için kullanılır. 2. indisten sonra atmak istiyorsk indisi verioruz
+			Console.WriteLine(sentence.Remove(2,4));//belli bir kısmı atmak için kullanılır. 2 indisten itibaren 5 karakteri kaldır
+ 
+
+			Console.ReadLine();
+
+		}
+
+	}
+
+
+}
