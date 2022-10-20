@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+
+			IWork[] workers = new IWork[3]
+			{
+				new IManager(),
+				new IWorkers(),
+				new IRobots()
+			};
+
+			foreach (var i in workers)
+			{
+				i.Work();
+			}
+			Console.ReadLine();
+
+		}
+	}
+
+	}
+ 
+interface IWork
+{
+	void Work();
+}
+interface IEat
+{
+	void Eat();
+}
+interface IGetSalary
+{
+	void GetSalary();
+}
+
+
+class IWorkers : IWork, IEat, IGetSalary
+{
+	public void Eat()
+	{
+		Console.Write("work eat çalıştı");
+	}
+
+	public void GetSalary()
+	{
+		Console.Write("work getslary çalıştı");
+	}
+
+	public void Work()
+	{
+		Console.Write(" work work çalıştı");
+	}
+}
+
+
+class IManager : IWork, IEat, IGetSalary
+{
+	public void Eat()
+	{
+		Console.Write(" manager work çalıştı");
+	}
+
+	public void GetSalary()
+	{
+		Console.Write(" manager getsalary çalıştı");
+	}
+
+	public void Work()
+	{
+		Console.Write(" manager   work çalıştı");
+	}
+}
+class IRobots : IWork
+{
+	public void Work()
+	{
+		Console.Write(" robots   work çalıştı");
+	}
+}
