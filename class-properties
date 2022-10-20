@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	internal class CarsName
+	{
+	}
+	internal class CustomerManager
+	{
+		public int Id { get; set; }
+		public string Name { get; set; }
+		public string Lastname { get; set; }
+		public string City  { get; set; }
+
+
+		 
+
+		public void sum()
+		{
+			Console.WriteLine("Merhaba ben CustomerManager");
+		}
+
+		public void update()
+		{
+			Console.WriteLine("customer update method");
+		}
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	internal class Program
+	{
+
+
+		static void Main(string[] args)
+		{
+			CustomerManager customerName = new CustomerManager();
+			ProManager   ProMan= new ProManager();
+		 
+
+
+
+			customerName.sum();
+			customerName.update();
+
+			customerName.Id = 1;
+			customerName.Name = "Furkan";
+			customerName.Lastname = "Kalkan";
+			customerName.City = "istanbul";
+
+			CustomerManager customer2 = new CustomerManager
+			{
+				Id = 2,
+				Name = "mehme",
+				Lastname="aslna",
+				 City="ankara"
+			};
+
+			Console.Write(customerName.Name);
+			Console.WriteLine(customer2.Name);
+
+			Console.ReadLine();
+
+		}
+	}
+	
+}
