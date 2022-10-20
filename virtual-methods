@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace virtual_methods
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+			sqlServer serverr=new sqlServer();
+			serverr.Add();
+			Mysql mysql = new Mysql();
+			mysql.Add();
+
+			Oracle orc = new Oracle();
+			orc.Add();
+
+			Console.ReadLine();
+
+		}
+	}
+
+	class Database
+	{
+
+		public   void Add()
+		{
+			Console.WriteLine("Database Added by default");
+		}
+
+		public   void Deleted()
+		{
+			Console.WriteLine("Deleted by default");
+		}
+	}
+	class sqlServer : Database
+	{
+
+		
+	}
+	class Mysql : Database
+	{
+		public override void Add()
+		{
+			Console.WriteLine("mysql diffrent");
+			base.Add();
+		}
+	}
+	class Oracle : Database
+	{
+		public override void Add()
+		{
+			Console.WriteLine("mysql diffrent");
+			base.Add();
+		}
+	}
+}
+
