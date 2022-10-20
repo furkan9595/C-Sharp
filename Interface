@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Interface
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			PersonManager manager = new PersonManager();
+			manager.Add(new Customer { Id = 1, FistsName = "furkan", LastName = "kalkan", Adress = "istanbul" });
+			//yada
+			Customer cst = new Customer
+			{
+				Id=1,
+				FistsName="frkan",
+				LastName="Kalkan",
+				Adress="istanbul"
+			};
+			manager.Add(cst);
+			Student std = new Student
+			{
+				Id = 2,
+				FistsName="ahme",
+				LastName="ars",
+				Department="Computer Science"
+			};
+			PersonManager1 prs1 = new PersonManager1();
+			prs1.Add(std);
+			Console.ReadLine();
+		}
+	}
+	interface IPerson
+	{
+		int Id { get; set; }
+		String FistsName { get; set; }
+	    String LastName { get; set; }
+
+	
+	class Customer : IPerson
+	{
+		public int Id { get; set; }
+		public String FistsName { get; set; }
+		public String LastName { get; set; }
+		public String Adress { get; set; }
+	}
+	class Student : IPerson
+	{
+		public int Id { get; set; }
+		public String FistsName { get; set; }
+		public String LastName { get; set; }
+		public String Department { get; set; }
+	}
+	class PersonManager 
+	{
+		public void Add(Customer customer)
+		{
+			Console.Write(customer.FistsName);
+		}
+	}
+	class PersonManager1
+	{
+		public void Add(IPerson person)
+		{
+			Console.Write(person.FistsName);
+		}
+
+	}
+}
