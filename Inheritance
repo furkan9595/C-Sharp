@@ -1,0 +1,74 @@
+ 
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace kalıtım
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+
+			Person[] datas = new Person[3]
+			{
+				new Customer{id =1,Name="furkan",Lastname="KALKAN"},
+				new Person{id=2,Name="Mehmet",Lastname="ASLAN",},
+				new Student{id=3,Name="Ali",Lastname="TONGA"}
+			};
+			
+			foreach (var data in datas)
+			{
+				
+				Console.Write("id : "+ data.id+ "\nName : "+ data.Name+ "\nLastname : "+data.Lastname);
+				Console.WriteLine();
+			}
+			Console.ReadLine();
+		}
+
+		
+	}
+
+	 
+	class Person  
+	{
+
+
+		public int id { get; set; }
+		public string Name { get; set; }
+		public string Lastname { get; set; }
+
+		 
+
+	}
+
+	class Customer:Person
+	{
+
+		public void dene()
+		{
+			Console.WriteLine("customer fonksiyonu");
+		}
+
+
+
+	}
+
+	class Student : Person
+	{
+
+		public void deneme()
+		{
+			Console.WriteLine("student fonksiyonu");
+		}
+
+
+
+	}
+  
+
+}
