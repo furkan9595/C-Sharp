@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RecapAbstractExample
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+
+
+
+
+			Loglama();
+	  
+			Console.ReadLine();
+		}
+ 
+
+		private static void Loglama()
+		{
+			try
+			{
+				Console.WriteLine("Birsayı giriniz ");
+				int sayi = Convert.ToInt32(Console.ReadLine());
+
+				if (sayi == 3)
+				{
+					throw new Exception("Böyle sayı mı olur");
+				}
+			}
+			catch(Exception hata)// hatanın bilgilerine ulaşmak için kullanıyoruz
+			{
+				File.AppendAllText("log.txt",Environment.UserName);
+				File.AppendAllText("log.txt", Environment.NewLine);// br alt satıra geçtik
+				File.AppendAllText("log.txt", DateTime.Now.ToString("dd.MM.yyyy HH:mm"));// tarih ve saat bilgilerini aldık
+				File.AppendAllText("log.txt", "\r\n");// bir alt satıra inme içinde kullanılıyor yani Environment.NewLine ile aynı.
+				File.AppendAllText("log.txt",hata.Message);// hatayı yazdık
+				File.AppendAllText("log.txt", "@");
+				File.AppendAllText("log.txt", hata.StackTrace);// hatanın nerede olduğunu gösterir
+				File.AppendAllText("log.txt", Environment.NewLine+"++++++++++++++++++++++"+Environment.NewLine);
+			}
+
+
+		}
+	}
+
+
+
+
+
+	class CustomerManager
+	{
+		public void Add()
+		{
+			Console.WriteLine("Customer Added!");
+		}
+
+	}
+
+
+
+
+
+}
