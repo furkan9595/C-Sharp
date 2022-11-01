@@ -1,0 +1,37 @@
+CONTROLERDA KULLANIM ŞEKLİ : 
+
+
+public IActionResult Index(int id)//actionresult
+		{
+ 
+
+			ViewBag.id = id;
+			//ViewBag.surname = "kalkan";
+			//ViewBag.MailAddress = "furkankalkan@gmail.com";
+
+			ViewData["name"] = "furkan";
+
+			ViewData["names"] = new List<string>()
+			{
+				"furkan",
+				"kalkan",
+				"bilgisayar mühendisi"
+			};
+
+
+			return View();
+			//return View("index2","Ornek");
+		}
+
+
+
+------------------------------------------------------------------------------------------------
+
+VİEV İÇERİSİNDE KULLANIM ŞEKLİ : 
+
+@foreach (var item in ViewData["names"] as List<string>)
+{
+    <p>@item</p>
+}
+ 
+ 
