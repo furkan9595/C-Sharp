@@ -1,0 +1,46 @@
+
+    public class Product
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+
+
+
+    public class TemDataController : Controller
+    {
+        public IActionResult Index()
+        {
+
+
+            var productlist = new List<Product>()
+            {
+                new(){id=1,name="kalem"},
+                new(){id=2,name="uç"},
+                new(){id=3,name="silgi"},
+                new(){id=4,name="açacak"},
+            };
+
+            ViewBag.name = "furkan";
+
+            TempData["surname"] = "kalkan";
+
+
+            return View(productlist);
+        }
+         
+         
+         
+         ----------------------------------------------------------------------------------------
+         
+         
+@model List<Product>;//model ile tipini belirttik
+
+@foreach (var item in Model)// Model ile datayı aldık
+{
+    <p>@item.id - @item.name</p>
+}
+         
+         
+         
+         
