@@ -1,0 +1,26 @@
+Controler içerisindeki Action Method 
+
+public IActionResult Index2(){
+
+			ViewBag.name = "Furkan";
+			ViewBag.number = 5305325;
+			ViewBag.MailAddress = "furkankalkan@gmail.com";
+
+			return	View();
+		}
+    
+    
+    View içerisinden çağırmak : 
+    
+ <label style="background-color:red; color:white;">Adınız : </label>
+<p>  @ViewBag.name; </p>
+
+<label style="background-color:red; color:white;">Numaranız : </label>
+<p>  @ViewBag.number; </p>
+
+<label style ="background-color:red; color:white;">    Mail Adresiniz  : </label>
+<p>  @ViewBag.MailAdress; </p>
+ 
+
+
+
