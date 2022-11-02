@@ -1,0 +1,39 @@
+ 
+
+
+
+
+@{
+    ViewData["Title"] = "View";
+    var alert = "merhab bu bir uyarıdır";
+} 
+
+<p>Günün tarihi : @DateTime.Now.ToShortTimeString();</p>
+
+@{
+    var datetime = DateTime.Now.ToShortDateString();
+    var message = "merhaba";
+    @:bugünün tarihi birinci yöntem ile  : @datetime// ilk yöntem ile txt yazdırma
+
+   <p>Mesaj : @message </p>
+
+   <text>Bugünün tarihi ikinci yöntem ile : @datetime</text>// ikinci yöntem ile txt yazdırma 
+
+}
+
+@if (DateTime.IsLeapYear(DateTime.Now.Year))//artık yıl bulmak
+{
+    <p>doğru</p>
+}else
+{
+    <p>Eşit Değil</p>
+    @alert
+}
+@for (var i = 0; i < 10; i++)//for döngüsü
+{
+    <p>@i</p>
+}
+@foreach (var item in Enumerable.Range(1,10).ToList())//foreach döngüsü
+{
+    <p>@item</p>
+}
