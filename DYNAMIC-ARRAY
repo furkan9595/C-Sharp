@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp1
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			int number=0;
+			 Console.WriteLine("Lutfen Dizi Boyutunu Giriniz : ");
+			 number =  Convert.ToInt32(Console.ReadLine());
+			 String[] student = new String[number];
+			for (int i = 0; i < number; i++)
+			{
+				Console.WriteLine("Lutfen Bir Veri Giriniz : ");
+				student[i] = Console.ReadLine();
+				 
+				if(i==number-1)
+				{
+					for (int j = 0; j < number; j++)
+					{
+						Console.WriteLine(student[j]);
+					}
+				}
+
+			}
+			Console.ReadLine();
+
+		}
+	}
+}
